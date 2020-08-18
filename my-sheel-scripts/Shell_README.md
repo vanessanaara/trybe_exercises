@@ -1,0 +1,1 @@
+- Este repositório tem por finalidade a desmonstração do uso da linguagem Shell Script para resolução dos problemas propostos pelos exercícios do curso,utilizando os comando básicos como ECHO, IF/ELIF/ELS e FOR, bem como os conceito de VARIÁVEIS e OPERADORES RELACIONAIS.
