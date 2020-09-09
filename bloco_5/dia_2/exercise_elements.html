@@ -60,6 +60,7 @@
       //1.Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body  
       let headOne = document.createElement("h1");
       document.body.appendChild(headOne).innerText = "Exercício 5.2 - Javascript DOM";
+      headOne.className = 'title'; //Adicione a classe title na tag h1 criada
       
       //2.Adicione a tag div com a classe main-content como filho da tag body
       let mainContent = document.createElement('div');
@@ -104,7 +105,8 @@
         let valuesList = document.createElement('li');
 
         valuesList.innerText = value;
-
+        valuesList.className = 'numbers-length';
+        
         rightContentList.appendChild(valuesList);
       }
 
@@ -113,6 +115,29 @@
         let headThree = document.createElement('h3');
 
         document.querySelector('.main-content').appendChild(headThree);
+        headThree.className = 'description'; //Adicione a classe description nas tags h3
+      }
+
+      //Remova o div criado no passo 5
+      document.querySelector('.main-content').removeChild(leftContent);
+
+      //Centralize o div criado no passo 6
+      document.querySelector('.right-content').style.marginRight = 'auto';
+
+      //Troque a cor de fundo do elemento pai da div criada no passo 3 para a cor verde
+      document.querySelector('.main-content').style.backgroundColor = 'green';
+
+      //Remova os dois últimos elementos da lista criada no passo 8
+      
+      let numbers = document.querySelectorAll('.numbers-length');
+
+      for (let j in numbers) {
+        let values = numbers[j];
+
+        if (values.innerText.includes('Nove') || values.innerText.includes('Dieci')) {
+          rightContentList.removeChild(values);
+        }
+
       }
 
     </script>
