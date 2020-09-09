@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //1.Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body  
+      let headOne = document.createElement("h1");
+      document.body.appendChild(headOne).innerText = "Exercício 5.2 - Javascript DOM";
+      headOne.className = 'title'; //Adicione a classe title na tag h1 criada
+      
+      //2.Adicione a tag div com a classe main-content como filho da tag body
+      let mainContent = document.createElement('div');
+      mainContent.className = 'main-content';
+      document.body.appendChild(mainContent);
+      
+      //3.Adicione a tag div com a classe center-content como filho da tag div criada no passo 2
+      let centerContent = document.createElement('div');
+      centerContent.className = 'center-content';
+      document.querySelector('div').appendChild(centerContent);
+
+      //4.Adicione a tag p como filho do div criado no passo 3 e coloque algum texto
+      let text = document.createElement('p');
+      document.querySelector('.center-content').appendChild(text).innerText = 'O objetivo desses exercícios é colocar em prática o que você acabou de aprender sobre DOM. Por isso, você deve fazer os exercícios utilizando apenas código JavaScript, o qual deve ser inserido entre as tags <script>.';
+      
+      //5.Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
+      let leftContent = document.createElement('div');
+      leftContent.className = 'left-content';
+      document.querySelector('.main-content').appendChild(leftContent);
+
+      //6.Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
+      let rightContent = document.createElement('div');
+      rightContent.className = 'right-content';
+      document.querySelector('.main-content').appendChild(rightContent);
+
+      //7.Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse elemento deve ser filho do div criado no passo 5
+      let image = document.createElement('img');
+      image.className = 'small-image';
+      document.querySelector('.left-content').appendChild(image)
+      image.src = 'https://picsum.photos/200';
+
+      //8.Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
+      let list = document.createElement('ul');
+      document.querySelector('.right-content').appendChild(list);
+      document.querySelector('ul').style.color = 'white';
+      let valuesName = ['Uno', 'Due', 'Tre', 'Quattro', 'Cinque', 'Sei', 'Sette', 'Otto', 'Nove', 'Dieci'];
+
+      let rightContentList = document.querySelector('ul');  
+
+      for (let i = 0; i < valuesName.length; i += 1) {
+        let value = valuesName[i];
+        let valuesList = document.createElement('li');
+
+        valuesList.innerText = value;
+        valuesList.className = 'numbers-length';
+        
+        rightContentList.appendChild(valuesList);
+      }
+
+      //9.Adicione 3 tags h3, todas sendo filhas do div criado no passo 2
+      for (let i = 0; i < 3; i += 1){
+        let headThree = document.createElement('h3');
+
+        document.querySelector('.main-content').appendChild(headThree);
+        headThree.className = 'description'; //Adicione a classe description nas tags h3
+      }
+
+      //Remova o div criado no passo 5
+      document.querySelector('.main-content').removeChild(leftContent);
+
+      //Centralize o div criado no passo 6
+      document.querySelector('.right-content').style.marginRight = 'auto';
+
+      //Troque a cor de fundo do elemento pai da div criada no passo 3 para a cor verde
+      document.querySelector('.main-content').style.backgroundColor = 'green';
+
+      //Remova os dois últimos elementos da lista criada no passo 8
+      
+      let numbers = document.querySelectorAll('.numbers-length');
+
+      for (let j in numbers) {
+        let values = numbers[j];
+
+        if (values.innerText.includes('Nove') || values.innerText.includes('Dieci')) {
+          rightContentList.removeChild(values);
+        }
+
+      }
+
+    </script>
+  </body>
+</html>
