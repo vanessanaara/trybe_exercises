@@ -91,6 +91,30 @@
       document.querySelector('.left-content').appendChild(image)
       image.src = 'https://picsum.photos/200';
 
+      //8.Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
+      let list = document.createElement('ul');
+      document.querySelector('.right-content').appendChild(list);
+      document.querySelector('ul').style.color = 'white';
+      let valuesName = ['Uno', 'Due', 'Tre', 'Quattro', 'Cinque', 'Sei', 'Sette', 'Otto', 'Nove', 'Dieci'];
+
+      let rightContentList = document.querySelector('ul');  
+
+      for (let i = 0; i < valuesName.length; i += 1) {
+        let value = valuesName[i];
+        let valuesList = document.createElement('li');
+
+        valuesList.innerText = value;
+
+        rightContentList.appendChild(valuesList);
+      }
+
+      //9.Adicione 3 tags h3, todas sendo filhas do div criado no passo 2
+      for (let i = 0; i < 3; i += 1){
+        let headThree = document.createElement('h3');
+
+        document.querySelector('.main-content').appendChild(headThree);
+      }
+
     </script>
   </body>
 </html>
