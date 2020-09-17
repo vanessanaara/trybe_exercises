@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Bloco 6/Dia 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header class="title">
+      <h1>Formulário de Cadastro de Currículo</h1>
+    </header>
+
+    <fieldset class="form">
+      <legend>Dados Pessoais</legend>
+      <div>
+        <label for="">Nome Completo</label><br>
+        <input type="text" id="full-name" placeholder="Digite seu nome completo" required maxlength="40">
+        
+        <label for="">E-mail</label><br>
+        <input type="text" id="email" placeholder="seuemail@mail.com" required maxlength="50">
+        
+        <label for="">CPF</label><br>
+        <input type="text" id="cpf" required maxlength="11">
+        
+        <label for="">Endereço</label><br>
+        <input type="text" id="address" required maxlength="200">
+      
+        <label for="">Cidade</label><br>
+        <input type="text" id="city" required maxlength="28">
+
+        <!-- <label for="">Estado</label><br>
+        <input type=""> -->
+
+        <label for="build-type">Tipo de Moradia</label><br>
+        <input type="radio" name="build-type" value="house" required> Casa
+        <input type="radio" name="build-type" value="apart" required> Apartamento
+      </div>
+
+    </fieldset>
+
+  </body>
+</html>
