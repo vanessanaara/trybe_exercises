@@ -15,5 +15,6 @@ const promise = new Promise ((resolve, reject) => {
   }
 
 })
-.then(arraySum => console.log([2, 3, 5, 10].map(arrayNumber => arraySum / arrayNumber)))
+.then(arraySum => [2, 3, 5, 10].map(arrayNumber => arraySum / arrayNumber))
+.then(newArray => console.log(newArray.reduce((result, number) => result + number, 0)))
 .catch(error => console.log(error));
