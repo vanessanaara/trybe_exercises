@@ -10,14 +10,10 @@ describe('sums two values', () => {
   });
 
   test('throws error when a string is passes as parameter', () => {
-    expect(() => {
-      sum(4, '5');
-    }).toThrow();
+    expect(() => sum(4, '5')).toThrow();
   });
 
   test('"parameters must be numbers" is the error message', () => {
-    expect(() => {
-      sum(4, '5');
-    }).toThrow('parameters must be numbers');
+    expect(() => sum(4, '5')).toThrow('parameters must be numbers');
   });
-})
+});
